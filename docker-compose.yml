@@ -3,6 +3,6 @@ services:
     image: php:apache
     container_name: apache_server
     ports:
-      - "8080:8080"
+      - "80:80"
     volumes:
       - ./src:/var/www/html
