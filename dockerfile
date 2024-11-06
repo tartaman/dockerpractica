@@ -1,7 +1,9 @@
-FROM php:apache
+FROM php:7.4-apache
 
-# Instalar la extensión mysqli
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+# Instalar pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Copiar archivos al contenedor
+# Copiar los archivos del proyecto a /var/www/html
 COPY ./src /var/www/html
+
+COPY ./.env /var/www/
